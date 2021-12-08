@@ -12,7 +12,6 @@
     /></label>
     <br />
     <button @click="register">新規登録</button>
-    <br />
   </div>
 </template>
 
@@ -37,7 +36,7 @@ export default {
         .createUserWithEmailAndPassword(this.username, this.email, this.password)
         .then((data) => {
           data.user.sendEmailVerification().then(() => {
-            this.$router.replace('/confirm')
+            this.$router.replace('/home')
           })
         })
         .catch((error) => {
